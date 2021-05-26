@@ -1,17 +1,7 @@
 package net.sympower.symbok.javac.handler;
 
-import static lombok.javac.handlers.JavacHandlerUtil.*;
-
-import com.sun.tools.javac.tree.JCTree;
-import com.sun.tools.javac.util.Name;
-import lombok.core.AST.Kind;
-import lombok.core.AnnotationValues;
-import lombok.javac.JavacAnnotationHandler;
-import lombok.javac.JavacNode;
-import lombok.javac.JavacTreeMaker;
-import lombok.javac.handlers.JavacHandlerUtil.MemberExistsResult;
-
 import com.sun.tools.javac.code.Flags;
+import com.sun.tools.javac.tree.JCTree;
 import com.sun.tools.javac.tree.JCTree.JCAnnotation;
 import com.sun.tools.javac.tree.JCTree.JCExpression;
 import com.sun.tools.javac.tree.JCTree.JCMethodDecl;
@@ -19,10 +9,24 @@ import com.sun.tools.javac.tree.JCTree.JCStatement;
 import com.sun.tools.javac.tree.JCTree.JCVariableDecl;
 import com.sun.tools.javac.util.Context;
 import com.sun.tools.javac.util.List;
+import com.sun.tools.javac.util.Name;
+import lombok.core.AST.Kind;
+import lombok.core.AnnotationValues;
+import lombok.javac.JavacAnnotationHandler;
+import lombok.javac.JavacNode;
+import lombok.javac.JavacTreeMaker;
+import lombok.javac.handlers.JavacHandlerUtil.MemberExistsResult;
 import net.sympower.symbok.ConfigurationKeys;
 import net.sympower.symbok.ReadLock;
 import net.sympower.symbok.WriteLock;
 import org.kohsuke.MetaInfServices;
+
+import static lombok.javac.handlers.JavacHandlerUtil.deleteAnnotationIfNeccessary;
+import static lombok.javac.handlers.JavacHandlerUtil.fieldExists;
+import static lombok.javac.handlers.JavacHandlerUtil.genTypeRef;
+import static lombok.javac.handlers.JavacHandlerUtil.injectFieldAndMarkGenerated;
+import static lombok.javac.handlers.JavacHandlerUtil.recursiveSetGeneratedBy;
+import static lombok.javac.handlers.JavacHandlerUtil.setGeneratedBy;
 
 public class HandleReadWriteLock {
 
