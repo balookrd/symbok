@@ -16,13 +16,13 @@ public class ConfigurationKeys implements ConfigurationKeysLoader {
 
   public static final ConfigurationKey<FlagUsageType> THREAD_NAMED_FLAG_USAGE =
       new ConfigurationKey<FlagUsageType>(
-          "hm.binkley.lombok.threadNamed.flagUsage",
+          "symbok.threadNamed.flagUsage",
           "Emit a warning or error if @ThreadNamed is used."
       ) {};
 
   public static final ConfigurationKey<FlagUsageType> GETTER2_FLAG_USAGE =
       new ConfigurationKey<FlagUsageType>(
-          "hm.binkley.lombok.getter2.flagUsage",
+          "symbok.getter2.flagUsage",
           "Emit a warning or error if @Getter2 is used."
       ) {};
 }
