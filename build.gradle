@@ -73,6 +73,7 @@ test {
 
 dependencies {
   compileOnly files("${System.properties['java.home']}/../lib/tools.jar")
+  annotationProcessor 'org.kohsuke.metainf-services:metainf-services:1.8'
   compileOnly 'org.kohsuke.metainf-services:metainf-services:1.8'
   compileOnly "org.eclipse.jdt:org.eclipse.jdt.core:3.10.0"
   compileOnly 'javax.inject:javax.inject:1'
